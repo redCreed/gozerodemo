@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-
 	"gozerodemo/app/user/internal/config"
 	"gozerodemo/app/user/internal/server"
 	"gozerodemo/app/user/internal/svc"

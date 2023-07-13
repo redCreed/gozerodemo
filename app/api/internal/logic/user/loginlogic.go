@@ -2,6 +2,8 @@ package user
 
 import (
 	"context"
+	"fmt"
+	"gozerodemo/app/user/user"
 
 	"gozerodemo/app/api/internal/svc"
 	"gozerodemo/app/api/internal/types"
@@ -24,7 +26,16 @@ func NewLoginLogic(ctx context.Context, svcCtx *svc.ServiceContext) *LoginLogic 
 }
 
 func (l *LoginLogic) Login(req *types.LoginReq) (resp *types.LoginResp, err error) {
-	// todo: add your logic here and delete this line
-
-	return
+	//test处理
+	in := &user.LoginRequest{
+		Username: req.Username,
+		Password: req.Password,
+	}
+	ret, err := l.svcCtx.UserRPC.Login(context.Background(), in)
+	fmt.Println("rpc resp:", ret.Id, ret.Phone, ret.Username)
+	tt := &types.LoginResp{
+		AccessToken:  "token",
+		AccessExpire: 1,
+	}
+	return tt, err
 }
