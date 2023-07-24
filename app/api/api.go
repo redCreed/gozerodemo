@@ -18,6 +18,10 @@ var configFile = flag.String("f", "etc/api-api.yaml", "the config file")
 func init() {
 	//close statis log
 	logx.DisableStat()
+
+	//只需要记录错误日志，可以通过设置日志等级来取消level为info级别日志的输出
+	//logx.SetLevel(logx.ErrorLevel)
+
 }
 
 func main() {

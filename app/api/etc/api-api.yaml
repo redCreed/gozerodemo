@@ -13,3 +13,16 @@ UserRPC:
     Key: user.rpc
   NonBlock: true
 
+ProductRPC:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: product.rpc
+  NonBlock: true
+
+ReplyRPC:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: reply.rpc
+  NonBlock: true

@@ -18,6 +18,7 @@ func ProductDetailHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 		}
 
 		l := logic.NewProductDetailLogic(r.Context(), svcCtx)
+
 		resp, err := l.ProductDetail(&req)
 		if err != nil {
 			httpx.ErrorCtx(r.Context(), w, err)

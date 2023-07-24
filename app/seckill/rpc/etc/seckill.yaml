@@ -1,0 +1,27 @@
+Name: rpc.rpc
+ListenOn: 0.0.0.0:8080
+Etcd:
+  Hosts:
+  - 127.0.0.1:2379
+  Key: rpc.rpc
+BizRedis:
+  Host: 127.0.0.1:6379
+  Pass:
+  Type: node
+ProductRPC:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: product.rpc
+Kafka:
+  Name: seckill_msg,
+  Brokers:
+    - 127.0.0.1:9092
+  Topic: seckill-topic
+  Group: seckill-group
+
+OrderRPC:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: order.rpc
